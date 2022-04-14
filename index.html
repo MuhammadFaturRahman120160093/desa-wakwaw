@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />  
+	<title>Desa Margodadi</title>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body> 
+    <h1>DESA MARGODADI </h1>
+	<div class="ketengah">
+		
+		<hr> 
+ 
+		<h2>Desa Margodadi</h2>
+		<p>
+			Desa Margodadi terletak di kabubaten Lampung Selatan, kecamatan Jati Agung. Desa ini memiliki luas sebesar 5,6561 km^2. 
+		</p>
+       <h2>Peta Margodadi</h2>
+       <p> lokasi Desa Margodadi, Kec. Jati Agung, Lampung Selatan.</p>
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css">
+       <style>
+         .map {
+           height: 400px;
+           width: 40%;
+         }
+       </style>
+       <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+       <title>OpenLayers example</title>
+     </head>
+     <body>
+       <h2></h2>
+       <div id="map" class="map"></div>
+       <script type="text/javascript">
+         var map = new ol.Map({
+           target: 'map',
+           layers: [
+             new ol.layer.Tile({
+               source: new ol.source.OSM()
+             })
+           ],
+           view: new ol.View({
+             center: ol.proj.fromLonLat([105.37, -5.31]),
+             zoom: 12.8
+           })
+         });
+       </script>
+
+        <h2>Data Jenis Kelamin Penduduk</h2>
+        <div style="width: 400px" align="center">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <script>
+            const labels = [
+            'Laki-laki',
+            'Perempuan',
+        ];
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Orang',
+                backgroundColor: ['red','purple'],
+                borderColor: 'white',
+                data: [1541, 1431],
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {}
+            };
+
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+        </script>
+
+        <p>Di desa Margodadi, yang memiliki total 2.972 jiwa. Terdiri dari 875 Kepala keluarga yang terbagi menjadi 2 jenis kelamin yaitu laki-laki sebanyak 1.541 orang dan perempuan sebanyak 1.431 orang.</p>
+
+        <h2>Kewarganegaraan</h2>
+        <p> </p>
+        <div style="width: 800px" align="center">
+            <canvas id="myChart1"></canvas>
+        </div>
+
+        <script>
+            const labels1 = [
+            'WNI Laki-Laki',
+            'WNI Perempuan',
+            'WNA Laki-Laki',
+            'WNA Perempuan',
+            'WNI Kewarganegaraan Laki-Laki',
+            'WNI Kewarganegaraan Perempuan'
+        ];
+        const data1 = {
+            labels: labels1,
+            datasets: [{
+                label: 'Kewarganegaraan',
+                backgroundColor: ['pink', 'cyan', ],
+                borderColor: 'white',
+                
+                data: [1541, 1431, 0, 0, 0, 0],
+            }]
+        };
+
+        const config1 = {
+            type: 'bar',
+            data: data1,
+            options: {}
+            };
+
+        const myChart1 = new Chart(
+            document.getElementById('myChart1'),
+            config1
+        );
+        </script>
+
+        <h2> Jenis Pekerjaan </h2>
+        <p></p>
+        <div style="width: 800px" align="center">
+            <canvas id="myChart2"></canvas>
+        </div>
+
+        <script>
+            const labels2 = [
+            'Petani',
+            'Pedagang',
+            'Pegawai Sipil',
+            'Tukang',
+            'Guru',
+            'Bidan',
+            'Perawat',
+            'TNI/POLRI',
+            'Sopir',
+            'Buruh',
+            'Pensiunan',
+            'Swasta',
+        ];
+        const data2 = {
+            labels: labels2,
+            datasets: [{
+                label: 'Orang',
+                backgroundColor: ['yellow', 'cyan', 'red'],
+                color: 'white',
+                borderColor: 'blue',
+                data: [563, 99, 21, 25, 29, 4, 2, 6, 15, 152, 9, 145,],
+            }]
+        };
+
+        const config2 = {
+            type: 'line',
+            data: data2,
+            options: {}
+            };
+
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        );
+        </script>
+
+        <p>Pekerjaan warga Desa Margodadi didominasi oleh petani, buruh, dan Swasta</p>
+
+        <h2> Data Penganut Agama </h2>
+        <p>  </p>
+        
+        <div style="width: 500px" align="center">
+            <canvas id="myChart3"></canvas>
+        </div>
+
+        <script>
+            const labels3 = [
+            'Islam',
+            'Kristen',
+            'Katolik',
+        ];
+        const data3 = {
+            labels: labels3,
+            datasets: [{
+                label: 'Orang',
+                backgroundColor: ['orange', 'green', 'blue'],
+                borderColor: 'blue',
+                data: [3432, 70, 408],
+            }]
+        };
+
+        const config3 = {
+            type: 'bar',
+            data: data3,
+            options: {}
+            };
+
+        const myChart3 = new Chart(
+            document.getElementById('myChart3'),
+            config3
+        );
+        </script>
+
+        <p>mayoritas penduduk Desa Margodadi adalah beragama Islam</p>
+
+        <h2> Jenjang Pendidikan </h2>
+        <p> </p>
+        <div style="width: 500px" align="center">
+            <canvas id="myChart4"></canvas>
+        </div>
+
+        <script>
+            const labels4 = [
+            'BELUM SEKOLAH',
+            'TIDAK TAMAT SD',
+            'TAMAT SD',
+            'TAMAT SLTP/SEDERAJAT',
+            'TAMAT SLTA/SEDERAJAT',
+            'AKADEMI/DIPLOMA/SARJANA MUDA',
+            'SARJANA/STRATA I',
+            'SARJANA/STRATA II',
+            'SARJANA/STRATA III',
+            'BELUM LULUS SEKOLAH',
+        ];
+        const data4 = {
+            labels: labels4,
+            datasets: [{
+                label: 'Orang',
+                backgroundColor: ['red', 'green', 'blue', 'yellow', 'cyan', 'orange', 'black', 'brown', ''],
+                borderColor: 'blue',
+                data: [348, 121, 142, 313, 937, 98, 115, 4, 2, 892],
+            }]
+        };
+
+        const config4 = {
+            type: 'bar',
+            data: data4,
+            options: {}
+            };
+
+        const myChart4 = new Chart(
+            document.getElementById('myChart4'),
+            config4
+        );
+        </script>
+	</div>
+
+    
+</body>
+</html>
